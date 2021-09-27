@@ -303,28 +303,28 @@ const getWeather = () => {
       // weather.id = 500; // for weather icon check
 
       if (weather.id === 800) {
-        weatherIcon.setAttribute('src', '../Coords app/imgs/icons/sun.png')
+        weatherIcon.setAttribute('src', '../WeatherApp_v1/imgs/icons/sun.png')
         heroImg.className = 'hero-img bgSun';
       } else if (weather.id >= 200 && weather.id < 300) {
-        weatherIcon.setAttribute('src', '../Coords app/weatherapp/zasoby/WeatherApp grafiki/thunderstorm.png')
+        weatherIcon.setAttribute('src', '../WeatherApp_v1/weatherapp/zasoby/WeatherApp grafiki/thunderstorm.png')
         heroImg.className = 'hero-img bgThunderstorm';
       } else if (weather.id >= 300 && weather.id < 400) {
-        weatherIcon.setAttribute('src', '../Coords app/imgs/icons/drizzle.png')
+        weatherIcon.setAttribute('src', '../WeatherApp_v1/imgs/icons/drizzle.png')
         heroImg.className = "hero-img bgDrizzle";
       } else if (weather.id >= 500 && weather.id < 600) {
-        weatherIcon.setAttribute('src', '../Coords app/imgs/icons/rain.png')
+        weatherIcon.setAttribute('src', '../WeatherApp_v1/imgs/icons/rain.png')
         heroImg.className = "hero-img bgRain";
       } else if (weather.id >= 600 && weather.id < 700) {
-        weatherIcon.setAttribute('src', '../Coords app/imgs/icons/snow.png')
+        weatherIcon.setAttribute('src', '../WeatherApp_v1/imgs/icons/snow.png')
         heroImg.className = "hero-img bgSnow";
       } else if (weather.id >= 801 && weather.id < 805) {
-        weatherIcon.setAttribute('src', '../Coords app/imgs/icons/cloud.png')
+        weatherIcon.setAttribute('src', '../WeatherApp_v1/imgs/icons/cloud.png')
         heroImg.className = "hero-img bgClouds";
       } else if (weather.id === 741) {
-        weatherIcon.setAttribute('src', '../Coords app/imgs/icons/fog.png')
+        weatherIcon.setAttribute('src', '../WeatherApp_v1/imgs/icons/fog.png')
         heroImg.className = "hero-img bgFog";
       } else {
-        weatherIcon.setAttribute('src', '../Coords app/imgs/icons/unknown.png')
+        weatherIcon.setAttribute('src', '../WeatherApp_v1/imgs/icons/unknown.png')
         heroImg.className = "hero-img bgClouds";
       };
 
@@ -343,7 +343,7 @@ function errorCatch() {
   warningValue.textContent = "Type CORRECT city name or coords!"
   addressValue.textContent = '-';
   temperatureValue.textContent = '-';
-  weatherIcon.setAttribute('src', '../Coords app/imgs/icons/unknown.png')
+  weatherIcon.setAttribute('src', '../WeatherApp_v1/imgs/icons/unknown.png')
   timezoneValue.textContent = `UTC -`
   latitudeValue.textContent = '-';
   longitudeValue.textContent = '-';
