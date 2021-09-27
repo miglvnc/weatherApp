@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
 
-<!-- zaprogroamowac pod api call lat lon -->
-
-<!-- podpiecie z footera linkow xD do zrobienia -->
-<!-- 
-buttony do zrobienia, pokombinowac w chuj trzeba z inputami. Po kliknieciu musi usuwac formularz albo zostawiac tylko ten ktory nas interesuje. -->
-
-<!-- optymalizacja i czyszczenie kodu -->
-
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,34 +11,31 @@ buttony do zrobienia, pokombinowac w chuj trzeba z inputami. Po kliknieciu musi 
     <link rel="stylesheet" href="../Coords app/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+
 </head>
 
 <body>
     <div class='hero-img'>
-        <div class='hero-shadow'></div>
-
         <main>
             <div class="headerText">
                 <h1 class="head">WEATHER APP</h1>
             </div>
             <div class="wrapper">
-                <!-- <h3 class="start-info">Use below form to check weather</h3> -->
                 <div class="type-section">
                     <div class="address-section">
-                        <div class="formGroup field">
-                            <input id="cityInput" class="address" type="text" placeholder="">
+                        <div class="formGroup">
+                            <input id="cityInput" class="address" type="text">
                             <label for="cityInput" class="labelCity">City</label>
                         </div>
-                        <a class="addressBtn go"><i class="fas fa-search"></i></a>
+                        <a class="addressBtn searchBtn"><i class="fas fa-search"></i></a>
                     </div>
                     <div class="latitude-section">
-                        <div class="formGroup field">
+                        <div class="formGroup">
                             <input id="coordsInput" class="latitude" type="number" placeholder="Latitude">
                             <input class="longitude" type="number" placeholder="Longitude">
                             <label for="coordsInput" class="labelCoords">Coords</label>
                         </div>
-                        <a class="coordsBtn go"> <i class="fas fa-search-location"></i></a>
+                        <a class="coordsBtn searchBtn"> <i class="fas fa-search-location"></i></a>
                     </div>
                     <div class="warningText"><i class="info fas fa-exclamation-circle"></i>
                         <p class="warningValue"></p>

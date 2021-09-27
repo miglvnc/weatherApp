@@ -44,7 +44,6 @@ const moreInfo = document.querySelector(".dropdown");
 const detailsZone = document.querySelector(".details-zone")
 const coordsInfo = document.querySelector(".coords-info")
 const visible = document.querySelector(".visible")
-const resize = document.querySelector(".resize")
 
 //city found by coords
 let coordsCity;

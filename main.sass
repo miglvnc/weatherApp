@@ -11,6 +11,7 @@ body
     background-image: url("../Coords app/imgs/default3.png")
     scroll-behavior: smooth
 
+//backgrounds
 .hero-img
     position: relative
     height: 100%
@@ -23,17 +24,6 @@ body
     z-index: 1
     transition: background-image 1s
 
-// .hero-shadow
-//     position: absolute
-//     height: 100%
-//     width: 100%
-//     background-color: rgba(0, 0, 0, 0.308)
-//     z-index: -1
-//     transition: height 0.4s
-
-
-// .bgClouds
-//     background-image: url("/imgs/SMALLclouds-2329680_1280.jpg")
 .bgClouds
     background-image: url("../Coords app/imgs/SMALLclouds-2329680_1280D.jpg")
 .bgDrizzle
@@ -49,86 +39,73 @@ body
 .bgSun
     background-image: url("../Coords app/imgs/sun-smallD.jpg")   
 
+//main section
 main
     display: flex
     flex-direction: column
     justify-content: center
     align-items: center
+    flex-grow: 1
     margin: 0 0 25px 0
     overflow: hidden
-    flex-grow: 1
 
 .head
     display: inline-block
     align-self: center
     font-family: 'Concert One', cursive
-    color: 
-    font-size: 40px
+    font-size: 48px
     text-align: center
     margin-top: 10px
     color: #e4e4e4
     text-shadow: 2px 2px 5px black
 
-
-.headerText
-    animation: fadeIn
-    animation-duration: 1s
-
-span, p
+span, p, h3
     font-size: 16px
 
-
+// app body
 .wrapper
     display: flex
     flex-direction: column
     justify-content: center
     align-items: center
     margin: 20px 10px 20px 10px
-    // height: 75vh
-    // width: 90vw
     border: 2px solid #c2c2c2
-    border-radius: 25px
     max-width: 400px
     overflow: hidden
+    border-radius: 25px
     background-color: #12224d91
     box-shadow: 0px 0px 20px #030711
 
-    .start-info
-        margin: 10px 10px 5px 10px
-        padding: 5px 10px 5px 10px
-
 h3
     text-align: center
-    font-size: 16px
     text-shadow: 3px 3px 2px #070e24
+
+.formGroup
+    position: relative
+    width: 100%
 
 .type-section
     margin: 0px 10px 0px 10px
     height: 100%
 
     .warningText
+        margin: 10px 0px 15px 0px
         visibility: hidden
         text-align: center
-        // transition: 0.3s
         color: #f1f1f1
-        // color: #5bc0de
-        margin: 10px 0px 15px 0px
 
     .visible
         visibility: visible
 
-    p
-        display: inline-block
-        font-size: 12px
-    .info
-        font-size: 12px
-        padding: 0px 2px 0px 0px
-
     p, .info
         text-shadow: 2px 2px 2px black
+        font-size: 12px
 
-    .address-section
-        height: 75px
+    p
+        display: inline-block
+
+    .info
+        padding: 0px 2px 0px 0px
 
     .address-section, .latitude-section, .longitude-section
         display: grid
@@ -139,12 +116,11 @@ h3
         margin-top: 25px
         margin: 15px 15px 0px 15px
 
-    h3
-        text-align: left
-        margin: 0 0 0 5px
+    .address-section
+        height: 75px
+        margin-bottom: 30px
 
-    .go
-        // width: 80px
+    .searchBtn
         text-align: center
         padding: 10px
         font-size: 30px
@@ -155,7 +131,7 @@ h3
         text-shadow: 2px 2px 2px black
         transition: font-size 0.2s, color 0.3s
 
-    .go:hover
+    .searchBtn:hover
         font-size: 45px
         color: #7299e2
 
@@ -166,130 +142,17 @@ h3
     .invisible
         opacity: 0
 
-.address-section
-    margin-bottom: 30px
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0
+
+input[type=number]
+    -moz-appearance: textfield
 
 input
     margin: 5px
     width: 95%
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button
-    -webkit-appearance: none;
-    margin: 0;
-
-input[type=number]
-    -moz-appearance: textfield;
-
-.google-map
-    margin: 15px 25px
-    padding: 0px 15px
-    width: 100%
-
-.dropdown
-    display: flex
-    flex-direction: column
-    height: 30px
-    position: sticky
-    text-align: center
-    justify-content: center
-    align-items: center
-    cursor: pointer
-    padding: 0 50% 0 50%
-    transition: background-color 0.3s
-
-    p
-        position: absolute
-        font-size: 12px
-
-.dropdown:hover
-    background-color: #5072ce91
-
-
-
-.details-zone
-    display: grid
-    grid-template-columns: 1fr
-    justify-items: stretch
-    align-items: center
-    justify-content: center
-    width: 100%
-    height: 300px
-    background-color: #1b316e75
-    margin: 10px 0 0 0
-    text-align: center
-    border-top: 1px solid whitesmoke
-    border-bottom: 1px solid whitesmoke
-    transition-duration: 0.5s
-
-
-    .coords-info
-        visibility: hidden
-        transition: visibility 0.25s
-
-
-    .visible
-        visibility: visible
-
-    div
-        padding: 15px 0
-
-    div:nth-child(even)
-        background-color: #070e202d   
-
-        .coords
-            padding: 0
-            background-color: #00000000
-
-    h3
-        padding: 0 0 20px 0
-        color: #b8d5f7
-
-    // .coords-info
-    //     background-color: #5263929d
-
-
-    .photo
-        height: 50px
-
-    .wind
-        margin: 0 0 20px 0
-
-
-.resize
-    height: 740px
-    transition-duration: 0.4s
-.footer
-    display: flex
-    justify-content: center
-    align-items: center
-    color: white
-    flex-shrink: 1
-    overflow: hidden
-    padding: 5px
-
-    span
-        margin: 0 5px
-        text-shadow: 2px 2px 2px black
-
-    a
-        text-decoration: none
-        color: whitesmoke
-        transition: color 0.3s
-        padding: 5px
-
-    a:hover
-        color: #6387eb
-
-    i
-        font-size: 20px
-        text-shadow: 2px 2px 2px black
-
-.field
-    position: relative
-    width: 100%
-
-input
     background-color: #ffffff65 
     background: none
     border: none
@@ -297,6 +160,7 @@ input
     color: white
     font-size: 18px
     border-bottom: 1px solid #d4d4d4 
+    z-index: 1
     transition: 0.2s
 
 input:focus
@@ -312,7 +176,7 @@ input:focus
     font-size: 18px
     transition: 0.2s
     color: #d4d4d470 
-
+    cursor: text
 
 .labelCoords
     opacity: 0
@@ -352,6 +216,97 @@ input::placeholder
 input:focus::placeholder
     opacity: 0
 
+.dropdown
+    display: flex
+    flex-direction: column
+    height: 30px
+    position: sticky
+    text-align: center
+    justify-content: center
+    align-items: center
+    cursor: pointer
+    padding: 0 50% 0 50%
+    transition: background-color 0.3s
+
+    p
+        position: absolute
+        font-size: 12px
+
+.dropdown:hover
+    background-color: #5072ce91
+
+.details-zone
+    display: grid
+    grid-template-columns: 1fr
+    justify-items: stretch
+    align-items: center
+    justify-content: center
+    width: 100%
+    height: 300px
+    background-color: #1b316e75
+    margin: 10px 0 0 0
+    text-align: center
+    border-top: 1px solid whitesmoke
+    border-bottom: 1px solid whitesmoke
+    transition-duration: 0.5s
+
+    .coords-info
+        visibility: hidden
+        transition: visibility 0.25s
+
+    .visible
+        visibility: visible
+
+    div
+        padding: 15px 0
+
+    div:nth-child(even)
+        background-color: #070e202d   
+
+        .coords
+            padding: 0
+            background-color: #00000000
+
+    h3
+        padding: 0 0 20px 0
+        color: #b8d5f7
+
+    .photo
+        height: 50px
+
+    .wind
+        margin: 0 0 20px 0
+
+.resize
+    height: 740px
+    transition-duration: 0.4s
+
+.footer
+    display: flex
+    justify-content: center
+    align-items: center
+    color: white
+    flex-shrink: 1
+    overflow: hidden
+    padding: 5px
+
+    span
+        margin: 0 5px
+        text-shadow: 2px 2px 2px black
+
+    i
+        font-size: 20px
+        text-shadow: 2px 2px 2px black
+
+    a
+        text-decoration: none
+        color: whitesmoke
+        transition: color 0.3s
+        padding: 5px
+
+    a:hover
+        color: #6387eb
+
 .addressValue
     animation-delay: 0.1s
 
@@ -386,12 +341,12 @@ input:focus::placeholder
         height: 100%
         overflow: auto
 
-@media (min-width: 500px)
+@media (min-width: 400px)
     
     .head
         font-size: 60px
 
-@media (min-width: 1000px)
+@media (min-width: 600px)
     
     .head
         font-size: 70px
@@ -403,9 +358,6 @@ input:focus::placeholder
             text-shadow: 3px 3px 2px #070e24
         .photo
             height: 70px
-
-    .resize
-        height: 820px
 
             
     

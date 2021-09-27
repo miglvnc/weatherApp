@@ -59,28 +59,23 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-grow: 1;
   margin: 0 0 25px 0;
   overflow: hidden;
-  flex-grow: 1;
 }
 
 .head {
   display: inline-block;
   align-self: center;
   font-family: 'Concert One', cursive;
-  font-size: 40px;
+  font-size: 48px;
   text-align: center;
   margin-top: 10px;
   color: #e4e4e4;
   text-shadow: 2px 2px 5px black;
 }
 
-.headerText {
-  animation: fadeIn;
-  animation-duration: 1s;
-}
-
-span, p {
+span, p, h3 {
   font-size: 16px;
 }
 
@@ -91,22 +86,21 @@ span, p {
   align-items: center;
   margin: 20px 10px 20px 10px;
   border: 2px solid #c2c2c2;
-  border-radius: 25px;
   max-width: 400px;
   overflow: hidden;
+  border-radius: 25px;
   background-color: #12224d91;
   box-shadow: 0px 0px 20px #030711;
 }
 
-.wrapper .start-info {
-  margin: 10px 10px 5px 10px;
-  padding: 5px 10px 5px 10px;
-}
-
 h3 {
   text-align: center;
-  font-size: 16px;
   text-shadow: 3px 3px 2px #070e24;
+}
+
+.formGroup {
+  position: relative;
+  width: 100%;
 }
 
 .type-section {
@@ -115,32 +109,27 @@ h3 {
 }
 
 .type-section .warningText {
+  margin: 10px 0px 15px 0px;
   visibility: hidden;
   text-align: center;
   color: #f1f1f1;
-  margin: 10px 0px 15px 0px;
 }
 
 .type-section .visible {
   visibility: visible;
 }
 
+.type-section p, .type-section .info {
+  text-shadow: 2px 2px 2px black;
+  font-size: 12px;
+}
+
 .type-section p {
   display: inline-block;
-  font-size: 12px;
 }
 
 .type-section .info {
-  font-size: 12px;
   padding: 0px 2px 0px 0px;
-}
-
-.type-section p, .type-section .info {
-  text-shadow: 2px 2px 2px black;
-}
-
-.type-section .address-section {
-  height: 75px;
 }
 
 .type-section .address-section, .type-section .latitude-section, .type-section .longitude-section {
@@ -153,12 +142,12 @@ h3 {
   margin: 15px 15px 0px 15px;
 }
 
-.type-section h3 {
-  text-align: left;
-  margin: 0 0 0 5px;
+.type-section .address-section {
+  height: 75px;
+  margin-bottom: 30px;
 }
 
-.type-section .go {
+.type-section .searchBtn {
   text-align: center;
   padding: 10px;
   font-size: 30px;
@@ -170,7 +159,7 @@ h3 {
   transition: font-size 0.2s, color 0.3s;
 }
 
-.type-section .go:hover {
+.type-section .searchBtn:hover {
   font-size: 45px;
   color: #7299e2;
 }
@@ -184,15 +173,6 @@ h3 {
   opacity: 0;
 }
 
-.address-section {
-  margin-bottom: 30px;
-}
-
-input {
-  margin: 5px;
-  width: 95%;
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -203,10 +183,78 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-.google-map {
-  margin: 15px 25px;
-  padding: 0px 15px;
-  width: 100%;
+input {
+  margin: 5px;
+  width: 95%;
+  background-color: #ffffff65;
+  background: none;
+  border: none;
+  height: 30px;
+  color: white;
+  font-size: 18px;
+  border-bottom: 1px solid #d4d4d4;
+  z-index: 1;
+  transition: 0.2s;
+}
+
+input:focus {
+  outline: none;
+  transition: 0.2s;
+  z-index: 1;
+  border-bottom: 1px solid white;
+}
+
+.labelCity, .labelCoords {
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  font-size: 18px;
+  transition: 0.2s;
+  color: #d4d4d470;
+  cursor: text;
+}
+
+.labelCoords {
+  opacity: 0;
+}
+
+input:focus + .labelCity {
+  top: -18px;
+  left: 5px;
+  font-size: 14px;
+  transition: 0.2s;
+  color: whitesmoke;
+  opacity: 1;
+}
+
+input:focus ~ .labelCoords {
+  top: -18px;
+  left: 5px;
+  font-size: 14px;
+  transition: 0.2s;
+  color: whitesmoke;
+  opacity: 1;
+}
+
+.stayActive {
+  top: -18px;
+  left: 5px;
+  font-size: 14px;
+  transition: 0.2s;
+  color: whitesmoke;
+  opacity: 1;
+}
+
+input::placeholder {
+  color: #d4d4d470;
+  font-size: 18px;
+  font-family: 'Trispace', sans-serif;
+  padding-left: 5px;
+  transition: 0.2s;
+}
+
+input:focus::placeholder {
+  opacity: 0;
 }
 
 .dropdown {
@@ -302,6 +350,11 @@ input[type=number] {
   text-shadow: 2px 2px 2px black;
 }
 
+.footer i {
+  font-size: 20px;
+  text-shadow: 2px 2px 2px black;
+}
+
 .footer a {
   text-decoration: none;
   color: whitesmoke;
@@ -311,86 +364,6 @@ input[type=number] {
 
 .footer a:hover {
   color: #6387eb;
-}
-
-.footer i {
-  font-size: 20px;
-  text-shadow: 2px 2px 2px black;
-}
-
-.field {
-  position: relative;
-  width: 100%;
-}
-
-input {
-  background-color: #ffffff65;
-  background: none;
-  border: none;
-  height: 30px;
-  color: white;
-  font-size: 18px;
-  border-bottom: 1px solid #d4d4d4;
-  transition: 0.2s;
-}
-
-input:focus {
-  outline: none;
-  transition: 0.2s;
-  z-index: 1;
-  border-bottom: 1px solid white;
-}
-
-.labelCity, .labelCoords {
-  position: absolute;
-  top: 7px;
-  left: 10px;
-  font-size: 18px;
-  transition: 0.2s;
-  color: #d4d4d470;
-}
-
-.labelCoords {
-  opacity: 0;
-}
-
-input:focus + .labelCity {
-  top: -18px;
-  left: 5px;
-  font-size: 14px;
-  transition: 0.2s;
-  color: whitesmoke;
-  opacity: 1;
-}
-
-input:focus ~ .labelCoords {
-  top: -18px;
-  left: 5px;
-  font-size: 14px;
-  transition: 0.2s;
-  color: whitesmoke;
-  opacity: 1;
-}
-
-.stayActive {
-  top: -18px;
-  left: 5px;
-  font-size: 14px;
-  transition: 0.2s;
-  color: whitesmoke;
-  opacity: 1;
-}
-
-input::placeholder {
-  color: #d4d4d470;
-  font-size: 18px;
-  font-family: 'Trispace', sans-serif;
-  padding-left: 5px;
-  transition: 0.2s;
-}
-
-input:focus::placeholder {
-  opacity: 0;
 }
 
 .addressValue {
@@ -433,13 +406,13 @@ input:focus::placeholder {
   }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 400px) {
   .head {
     font-size: 60px;
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 600px) {
   .head {
     font-size: 70px;
   }
@@ -452,9 +425,6 @@ input:focus::placeholder {
   }
   .details-zone .photo {
     height: 70px;
-  }
-  .resize {
-    height: 820px;
   }
 }
 /*# sourceMappingURL=main.css.map */
