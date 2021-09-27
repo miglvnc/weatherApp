@@ -1,6 +1,5 @@
 //hero img
 const heroShadow = document.querySelector(".hero-shadow")
-const shadowResize = document.querySelector(".shadowResize")
 
 //heroImg bg changer
 const heroImg = document.querySelector(".hero-img")
@@ -28,7 +27,7 @@ let weatherValue = document.querySelector(".weatherValue");
 let pressureValue = document.querySelector(".pressureValue");
 let humidityValue = document.querySelector(".humidityValue");
 let windValue = document.querySelector(".windValue");
-let photo = document.querySelector(".photo");
+let weatherIcon = document.querySelector(".weatherIcon");
 
 //BTNs
 let addressBtn = document.querySelector(".addressBtn");
@@ -89,7 +88,7 @@ coordsBtn.addEventListener("click", stayActive);
 //event listeners for labels
 
 function drop() {
-  detailsZone.classList.toggle("resize")
+  detailsZone.classList.toggle("resizeDropdown")
   coordsInfo.classList.toggle("visible")
 }
 //function adds class for dropdown
@@ -316,28 +315,28 @@ const getWeather = () => {
       // weather.id = 500; // for weather icon check
 
       if (weather.id === 800) {
-        photo.setAttribute('src', '../Coords app/imgs/icons/sun.png')
+        weatherIcon.setAttribute('src', '../Coords app/imgs/icons/sun.png')
         heroImg.className = 'hero-img bgSun';
       } else if (weather.id >= 200 && weather.id < 300) {
-        photo.setAttribute('src', '../Coords app/weatherapp/zasoby/WeatherApp grafiki/thunderstorm.png')
+        weatherIcon.setAttribute('src', '../Coords app/weatherapp/zasoby/WeatherApp grafiki/thunderstorm.png')
         heroImg.className = 'hero-img bgThunderstorm';
       } else if (weather.id >= 300 && weather.id < 400) {
-        photo.setAttribute('src', '../Coords app/imgs/icons/drizzle.png')
+        weatherIcon.setAttribute('src', '../Coords app/imgs/icons/drizzle.png')
         heroImg.className = "hero-img bgDrizzle";
       } else if (weather.id >= 500 && weather.id < 600) {
-        photo.setAttribute('src', '../Coords app/imgs/icons/rain.png')
+        weatherIcon.setAttribute('src', '../Coords app/imgs/icons/rain.png')
         heroImg.className = "hero-img bgRain";
       } else if (weather.id >= 600 && weather.id < 700) {
-        photo.setAttribute('src', '../Coords app/imgs/icons/snow.png')
+        weatherIcon.setAttribute('src', '../Coords app/imgs/icons/snow.png')
         heroImg.className = "hero-img bgSnow";
       } else if (weather.id >= 801 && weather.id < 805) {
-        photo.setAttribute('src', '../Coords app/imgs/icons/cloud.png')
+        weatherIcon.setAttribute('src', '../Coords app/imgs/icons/cloud.png')
         heroImg.className = "hero-img bgClouds";
       } else if (weather.id === 741) {
-        photo.setAttribute('src', '../Coords app/imgs/icons/fog.png')
+        weatherIcon.setAttribute('src', '../Coords app/imgs/icons/fog.png')
         heroImg.className = "hero-img bgFog";
       } else {
-        photo.setAttribute('src', '../Coords app/imgs/icons/unknown.png')
+        weatherIcon.setAttribute('src', '../Coords app/imgs/icons/unknown.png')
         heroImg.className = "hero-img bgClouds";
       };
 
@@ -356,7 +355,7 @@ function errorCatch() {
   warningValue.textContent = "Type CORRECT city name or coords!"
   addressValue.textContent = '-';
   temperatureValue.textContent = '-';
-  photo.setAttribute('src', '../Coords app/imgs/icons/unknown.png')
+  weatherIcon.setAttribute('src', '../Coords app/imgs/icons/unknown.png')
   timezoneValue.textContent = `UTC -`
   latitudeValue.textContent = '-';
   longitudeValue.textContent = '-';
@@ -414,7 +413,7 @@ function enterCheckCity() {
 function animationFadeIn() {
   addressValue.className = "addressValue"
   temperatureValue.className = "temperatureValue";
-  photo.className = 'photo'
+  weatherIcon.className = 'weatherIcon'
   timezoneValue.className = "timezoneValue"
   latitudeValue.className = 'latitudeValue';
   longitudeValue.className = 'longitudeValue';
@@ -425,7 +424,7 @@ function animationFadeIn() {
     window.requestAnimationFrame(function () {
       addressValue.className = "addressValue fadeIn";
       temperatureValue.className = "temperatureValue fadeIn";
-      photo.className = 'photo fadeIn'
+      weatherIcon.className = 'weatherIcon fadeIn'
       timezoneValue.className = "timezoneValue fadeIn"
       latitudeValue.className = 'latitudeValue fadeIn';
       longitudeValue.className = 'longitudeValue fadeIn';

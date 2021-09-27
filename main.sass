@@ -69,6 +69,7 @@ span, p, h3
     justify-content: center
     align-items: center
     margin: 20px 10px 20px 10px
+    padding-top: 10px
     border: 2px solid #c2c2c2
     max-width: 400px
     overflow: hidden
@@ -152,22 +153,22 @@ input[type=number]
 
 input
     margin: 5px
+    height: 30px
     width: 95%
     background-color: #ffffff65 
     background: none
     border: none
-    height: 30px
     color: white
     font-size: 18px
-    border-bottom: 1px solid #d4d4d4 
-    z-index: 1
+    border-bottom: 1px solid #c4c4c4 
     transition: 0.2s
+    z-index: 1
 
 input:focus
     outline: none
+    border-bottom: 1px solid white
     transition: 0.2s
     z-index: 1
-    border-bottom: 1px solid white
 
 .labelCity, .labelCoords
     position: absolute
@@ -217,15 +218,15 @@ input:focus::placeholder
     opacity: 0
 
 .dropdown
+    position: sticky
     display: flex
     flex-direction: column
-    height: 30px
-    position: sticky
-    text-align: center
     justify-content: center
+    text-align: center
     align-items: center
-    cursor: pointer
     padding: 0 50% 0 50%
+    height: 30px
+    cursor: pointer
     transition: background-color 0.3s
 
     p
@@ -241,10 +242,11 @@ input:focus::placeholder
     justify-items: stretch
     align-items: center
     justify-content: center
+    margin: 10px 0 0 0
     width: 100%
     height: 300px
+    overflow: hidden
     background-color: #1b316e75
-    margin: 10px 0 0 0
     text-align: center
     border-top: 1px solid whitesmoke
     border-bottom: 1px solid whitesmoke
@@ -252,7 +254,7 @@ input:focus::placeholder
 
     .coords-info
         visibility: hidden
-        transition: visibility 0.25s
+        transition: visibility 1.5s
 
     .visible
         visibility: visible
@@ -271,22 +273,22 @@ input:focus::placeholder
         padding: 0 0 20px 0
         color: #b8d5f7
 
-    .photo
+    .weatherIcon
         height: 50px
 
     .wind
         margin: 0 0 20px 0
 
-.resize
+.resizeDropdown
     height: 740px
-    transition-duration: 0.4s
+    transition-duration: 0.5s
 
 .footer
     display: flex
     justify-content: center
     align-items: center
-    color: white
     flex-shrink: 1
+    color: white
     overflow: hidden
     padding: 5px
 
@@ -306,9 +308,6 @@ input:focus::placeholder
 
     a:hover
         color: #6387eb
-
-.addressValue
-    animation-delay: 0.1s
 
 .fadeIn
     animation: fadeInNew
@@ -356,8 +355,12 @@ input:focus::placeholder
         h3, span
             font-size: 20px
             text-shadow: 3px 3px 2px #070e24
-        .photo
+
+        .weatherIcon
             height: 70px
+
+    .resizeDropdown
+        height: 820px
 
             
     
