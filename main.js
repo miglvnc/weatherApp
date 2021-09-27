@@ -1,8 +1,8 @@
 //hero img
-const heroShadow = document.querySelector(".hero-shadow")
+const heroShadow = document.querySelector(".hero-shadow");
 
 //heroImg bg changer
-const heroImg = document.querySelector(".hero-img")
+const heroImg = document.querySelector(".hero-img");
 
 //inputs
 const address = document.querySelector(".address");
@@ -10,12 +10,12 @@ const latitude = document.querySelector(".latitude");
 const longitude = document.querySelector(".longitude");
 
 //labels
-const labelCity = document.querySelector(".labelCity")
-const labelCoords = document.querySelector(".labelCoords")
+const labelCity = document.querySelector(".labelCity");
+const labelCoords = document.querySelector(".labelCoords");
 
 //textWarning
-const warningText = document.querySelector(".warningText")
-let warningValue = document.querySelector(".warningValue")
+const warningText = document.querySelector(".warningText");
+let warningValue = document.querySelector(".warningValue");
 
 //results
 let addressValue = document.querySelector(".addressValue");
@@ -40,9 +40,9 @@ let urlCoords;
 
 //moreInfo dropdown
 const moreInfo = document.querySelector(".dropdown");
-const detailsZone = document.querySelector(".details-zone")
-const coordsInfo = document.querySelector(".coords-info")
-const visible = document.querySelector(".visible")
+const detailsZone = document.querySelector(".details-zone");
+const coordsInfo = document.querySelector(".coords-info");
+const visible = document.querySelector(".visible");
 
 //city found by coords
 let coordsCity;
@@ -69,14 +69,12 @@ function stayActive() {
   } else {
     labelCoords.classList.remove("stayActive");
   }
-}
-//make labels stay visible above the inputs for ADDRESS and COORDS
+}; //make labels stay visible above the inputs for ADDRESS and COORDS
 
 function removeInputHeaders() {
   labelCity.classList.remove("stayActive");
   labelCoords.classList.remove("stayActive");
-}
-//remove input labels just after user click "search" or enter
+}; //remove input labels just after user click "search" or enter
 
 address.addEventListener("click", stayActive);
 address.addEventListener("keyup", stayActive);
@@ -90,8 +88,7 @@ coordsBtn.addEventListener("click", stayActive);
 function drop() {
   detailsZone.classList.toggle("resizeDropdown")
   coordsInfo.classList.toggle("visible")
-}
-//function adds class for dropdown
+}; //function adds class for dropdown
 
 moreInfo.addEventListener('click', drop);
 
@@ -105,11 +102,8 @@ function warningTextAnimation() {
   ], {
     duration: 400,
     iterations: 1
-  })
-}
-//function for animate warning text in case of incorrect name of city/coords input
-
-
+  });
+}; //function for animate warning text in case of incorrect name of city/coords input
 
 function geolocation() {
   if (navigator.geolocation) {
@@ -119,30 +113,26 @@ function geolocation() {
       console.log('cos tam');
       lat = position.coords.latitude;
       long = position.coords.longitude; // app takes latitude and long from navi geolocation
-      getGeolocationCoords(lat, long); //
-      // getWeather(); // call back to 
+      getGeolocationCoords(lat, long); // callback to function that find city by coords
     };
   } else {
     alert('Geolocation is not supported by this browser.');
   }
-};
-//geolocation function
-
+}; //geolocation function
 
 const getGeolocationCoords = (lat, long) => {
-  urlGeolocation = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}${apiKey}${units}` //api for coords
+  urlGeolocation = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}${apiKey}${units}`; //api for coords
 
   axios.get(urlGeolocation)
     .then(res => {
       console.log(res);
-      console.log('kiedy');
       let userCoordsCity = res.data.name;
       coordsCity = userCoordsCity; // function takes city name from api to pass it to next function
       getWeather(); // call back to 
     })
     .catch(errorCatch); //catch if bad gateaway
   removeInputHeaders();
-}
+}; //function for finding city for user's geolocation navi
 
 const getWeatherCoords = () => {
 
@@ -166,20 +156,18 @@ const getWeatherCoords = () => {
 
       let inputCoordsCity = res3.data.name;
       coordsCity = inputCoordsCity;
-      // console.log(newCityLatLongName);
-      getWeather();
+      getWeather(); //callback to main function with details
       console.log(res3);
     })
     .catch(errorCatch);
   removeInputHeaders();
-}
+}; //function for finding city by input coords
 
 const getWeather = () => {
   animationFadeIn();
   city = 'Warszawa'; //in case if conditions are not met
   if (latitude.value == "" && longitude.value == "" && address.value != "") {
     city = address.value;
-    // console.log(coordsCity);
   } else if (latitude.value == "" && longitude.value == "" && coordsCity != "" && coordsCity != undefined) {
     city = coordsCity;
     console.log(city);
@@ -205,7 +193,7 @@ const getWeather = () => {
       const lon = res.data.coord.lon;
       const lat = res.data.coord.lat;
       //details about city/weather from api
-      console.log(res); // podklad resa
+      console.log(res); // for res check
 
 
       addressValue.textContent = name;
@@ -344,7 +332,7 @@ const getWeather = () => {
 
     })
     .catch(errorCatch)
-}
+}; //main function for finding city and weather details
 
 function errorCatch() {
   address.value = "";
@@ -362,7 +350,7 @@ function errorCatch() {
   pressureValue.textContent = '- hPa';
   humidityValue.textContent = '- %';
   windValue.textContent = '- km/s';
-};
+}; // function for error if api does not work (error)
 
 function emptyFieldsCity() {
 
@@ -377,7 +365,7 @@ function emptyFieldsCity() {
     address.value = "";
     removeInputHeaders()
   }
-}
+}; //function in case of empty city input
 
 function emptyFieldsCoords() {
 
@@ -392,7 +380,7 @@ function emptyFieldsCoords() {
     latitude.value = "";
     removeInputHeaders()
   }
-}
+}; //function in case of empty coords input
 
 function enterCheckCoords() {
   if (event.keyCode === 13) {
@@ -400,15 +388,14 @@ function enterCheckCoords() {
     longitude.blur();
     latitude.blur();
   }
-}
+}; //function for enter search for coords
 
 function enterCheckCity() {
   if (event.keyCode === 13) {
     emptyFieldsCity();
     address.blur();
   }
-}
-
+}; //function for enter search for city
 
 function animationFadeIn() {
   addressValue.className = "addressValue"
@@ -433,10 +420,12 @@ function animationFadeIn() {
       windValue.className = 'windValue fadeIn';
     });
   });
-}
+}; //animation for details
 
 geolocation();
 getWeather();
+
+//event listeners
 addressBtn.addEventListener('click', emptyFieldsCity)
 address.addEventListener('keyup', enterCheckCity)
 coordsBtn.addEventListener('click', emptyFieldsCoords)
