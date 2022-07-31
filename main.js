@@ -110,7 +110,6 @@ function geolocation() {
     navigator.geolocation.getCurrentPosition(showPosition);
 
     function showPosition(position) {
-      console.log('cos tam');
       lat = position.coords.latitude;
       long = position.coords.longitude; // app takes latitude and long from navi geolocation
       getGeolocationCoords(lat, long); // callback to function that find city by coords
@@ -125,7 +124,6 @@ const getGeolocationCoords = (lat, long) => {
 
   axios.get(urlGeolocation)
     .then(res => {
-      console.log(res);
       let userCoordsCity = res.data.name;
       coordsCity = userCoordsCity; // function takes city name from api to pass it to next function
       getWeather(); // call back to 
@@ -136,28 +134,17 @@ const getGeolocationCoords = (lat, long) => {
 
 const getWeatherCoords = () => {
 
-  console.log(latitude.value);
-  console.log(longitude.value);
-
   lat = latitude.value;
   long = longitude.value;
   //coords from inputs
-
-  console.log(`po kliknieciu ` + lat);
-  console.log(long);
-
   urlCoords = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}${apiKey}${units}`
   //api for coords
 
   axios.get(urlCoords)
     .then(res3 => {
-
-      console.log(res3);
-
       let inputCoordsCity = res3.data.name;
       coordsCity = inputCoordsCity;
       getWeather(); //callback to main function with details
-      console.log(res3);
     })
     .catch(errorCatch);
   removeInputHeaders();
@@ -170,7 +157,6 @@ const getWeather = () => {
     city = address.value;
   } else if (latitude.value == "" && longitude.value == "" && coordsCity != "" && coordsCity != undefined) {
     city = coordsCity;
-    console.log(city);
   } else if (address.value == "" && latitude.value != "" && longitude.value != "") {
     city = coordsCity;
   }
