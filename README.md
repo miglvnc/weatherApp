@@ -1,14 +1,24 @@
-# weatherApp
-WeatherApp
+# WeatherApp
 
-My first vanilla JavaScript app. Simply weather app with styled elements. 
+WeatherApp is an application based on HTML/CSS/JavaScript and using the weather API.
 
-Weather app use vanilla JS and API. Simply and easy to use application with a couple of styled components (buttons, labels, backgrounds etc.)
-To use application just type city name OR coords in right input. 
-After a while app will load main informations like city name, temperature and weather icon.
-You can click on the "dropdown" place "more information" to extend list of details - wind speed, coords, humidity, timezone, pressure.
+Application is created for training purpose and to learn how to use API, which can be found in the Internet.
+
+## Installation
+
+Just pull project and open index.html or open application via [Github Pages](https://miglvnc.github.io/weatherApp/).
+
+## Usage
+
+To use application just type city name OR coords in the right input. 
+After a while app will load main informations like city name, temperature and weather icon. Depends on weather in provided by the user city, the background will change.
+You can click on the button "more information" to extend list of details - wind speed, coords, humidity, timezone, pressure.
 Application use geological navigator and asks user for current location to find city/place and show details.
-Footer's links will be updated soon, atm I'm on my way to build LinkedIn profile and my own website. Stay tuned :)
 
-Thanks for testing my app.
-As always I'm open for any feedback. 
+![App Screen](.../imgs/Screen.PNG)
+
+## Contributing
+Pull requests are welcome. For any advice, suggestion or criticism please just let me know.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
